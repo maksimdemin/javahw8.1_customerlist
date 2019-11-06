@@ -23,32 +23,32 @@ public class Main
                     if (tokens.length != 2) {
                     throw new ArrayIndexOutOfBoundsException("Wrong format. Correct format: add Василий Петров vasily.petrov@gmail.com +79215637722");
                 }
-                    try {
+//                    try {
                         executor.addCustomer(tokens[1]);
-                    } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException ex) {
-                        System.out.println(ex.getMessage());
-                    }
+//                    } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException ex) {
+//                        System.out.println(ex.getMessage());
+//                    }
                 }
                 else if (tokens[0].equals("list")) {
-                    try {
+//                    try {
                         executor.listCustomers();
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
+//                    } catch (Exception e) {
+//                        System.out.println(e.getMessage());
+//                    }
                 } else if (tokens[0].equals("remove")) {
-                    try {
+//                    try {
                         executor.removeCustomer(tokens[1]);
-                    } catch (ArrayIndexOutOfBoundsException ex) {
-                        System.out.println("Wrong format. Correct format: remove Василий Петров");
-                    } catch (IllegalArgumentException ex) {
-                        System.out.println(ex.getMessage());
-                    }
+//                    } catch (ArrayIndexOutOfBoundsException ex) {
+//                        System.out.println("Wrong format. Correct format: remove Василий Петров");
+//                    } catch (IllegalArgumentException ex) {
+//                        System.out.println(ex.getMessage());
+//                    }
                 } else if (tokens[0].equals("count")) {
-                    try {
+//                    try {
                         System.out.println("There are " + executor.getCount() + " customers");
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
+//                    } catch (Exception e) {
+//                        System.out.println(e.getMessage());
+//                    }
                 } else if (tokens[0].equals("help")) {
                     System.out.println(helpText);
                 } else {
@@ -56,6 +56,8 @@ public class Main
                 }
             } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException ex) {
                 System.out.println(ex.getMessage());
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
